@@ -7,8 +7,7 @@ node {
 	checkout scm
 	sh 'pwd && ls'
 	sh 'git clone --depth 1 https://github.com/ahfarmer/emoji-search.git'
-        /* sh "cd emoji-search" */
-
+	sh 'cp -r ./emoji-search/* .'
     }
 
     stage('Build image') {
