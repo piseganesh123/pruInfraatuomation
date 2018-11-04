@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* Builds image */
 
-        app = docker.build("pruEmoji")
+        app = docker.build("pruEmoji/first")
     }
 
     stage('Test image') {
