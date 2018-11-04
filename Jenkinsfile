@@ -20,7 +20,7 @@ node {
         }
     
    stage('Run image') { 
-	   sh 'docker run -d -p 3000:3000 pruemoji:${env.BUILD_NUMBER}'
+	   sh 'docker run -d -p 3000:3000 pruemoji:$BUILD_NUMBER'
      }
     stage('Push image') {
         /* Pushing image to Docker Hub */
