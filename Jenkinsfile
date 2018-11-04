@@ -20,12 +20,12 @@ node {
         }
     
    stage('Run image') { 
-	sh 'docker run -d -p 3000:3000 pruemoji:$env.BUILD_NUMBER'
+	   sh 'docker run -d -p 3000:3000 pruemoji:${env.BUILD_NUMBER}'
      }
     stage('Push image') {
         /* Pushing image to Docker Hub */
         docker.withRegistry('https://registry.hub.docker.com', 'my-docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}")
+            /* app.push("${env.BUILD_NUMBER}") */
             /* app.push("latest") */ 
 	    deleteDir() /* clean up our workspace */	
         }
