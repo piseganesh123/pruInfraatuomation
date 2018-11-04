@@ -3,8 +3,9 @@ node {
 
     stage('Clone repository') {
         /* Clone Emoji repository */
-        checkout scm
 	sh "git clone --depth 1 https://github.com/ahfarmer/emoji-search.git"
+        sh "cd emoji-search"
+	checkout scm
 
     }
 
