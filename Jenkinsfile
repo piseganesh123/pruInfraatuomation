@@ -25,7 +25,7 @@ node {
     stage('Push image') {
         /* Pushing image to Docker Hub */
         docker.withRegistry('https://registry.hub.docker.com', 'my-docker-hub-credentials') {
-            /* app.push("${env.BUILD_NUMBER}") */
+            app.push("${env.BUILD_NUMBER}")
             /* app.push("latest") */ 
 	    deleteDir() /* clean up our workspace */	
         }
