@@ -4,9 +4,10 @@ node {
     stage('Clone repository') {
         /* Clone Emoji repository */
 	deleteDir() /* clean up our workspace */
-	sh "git clone --depth 1 https://github.com/ahfarmer/emoji-search.git"
-        sh "cd emoji-search"
 	checkout scm
+	sh 'pwd && ls'
+	sh 'git clone --depth 1 https://github.com/ahfarmer/emoji-search.git'
+        /* sh "cd emoji-search" */
 
     }
 
