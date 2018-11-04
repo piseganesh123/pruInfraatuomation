@@ -11,7 +11,7 @@ node {
 
     stage('Build image') {
         /* Builds image */
-        app = docker.build("pruemoji/first:${env.BUILD_NUMBER}")
+        app = docker.build("pruemoji:${env.BUILD_NUMBER}")
     }
 
     stage('Test image') {
