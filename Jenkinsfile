@@ -6,12 +6,12 @@ node {
 	deleteDir() /* clean up our workspace */
 	checkout scm /* checkout code from https://github.com/piseganesh123/pruInfraatuomation.git which holds Dockerfile */
 	sh 'git clone --depth 1 https://github.com/ahfarmer/emoji-search.git'
-	sh 'cp -r ./emoji-search/* .'  /* copy emoji code into directory where Dockerfile is kept"
+	sh 'cp -r ./emoji-search/* .'  /* copy emoji code into directory where Dockerfile is kept" */
     }
 
     stage('Build image') {
         /* Builds image */
-        def app = docker.build("pruemoji/first")
+        app = docker.build("pruemoji/first")
     }
 
     stage('Test image') {
@@ -28,3 +28,4 @@ node {
 	    deleteDir() /* clean up our workspace */	
         }
     }
+}
