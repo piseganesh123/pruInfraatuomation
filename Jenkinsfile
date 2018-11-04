@@ -18,7 +18,7 @@ node {
         /* Basic Unit test with Npm*/
 		
         }
-    }
+    
 
     stage('Push image') {
         /* Pushing image to Docker Hub */
