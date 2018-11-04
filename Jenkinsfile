@@ -11,7 +11,7 @@ node {
 
     stage('Build image') {
         /* Builds image */
-        app = docker.build("pruemoji/first")
+        app = docker.build("pruemoji/first:${env.BUILD_NUMBER}")
     }
 
     stage('Test image') {
@@ -24,7 +24,7 @@ node {
         /* Pushing image to Docker Hub */
         docker.withRegistry('https://registry.hub.docker.com', 'my-docker-hub-credentials') {
             app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            /*app.push("latest") */
 	    deleteDir() /* clean up our workspace */	
         }
     }
