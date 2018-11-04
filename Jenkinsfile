@@ -4,17 +4,14 @@ node {
     stage('Clone repository') {
         /* Clone Emoji repository */
         checkout scm
-	bash '''
-	    git clone --depth 1 https://github.com/ahfarmer/emoji-search.git
-	'''    
+	sh "git clone --depth 1 https://github.com/ahfarmer/emoji-search.git"
+
     }
 
     stage('Build image') {
         /* Builds image */
-	bash '''
-		pwd
-		ls
-	'''
+	sh "pwd"
+	sh "ls"
         app = docker.build("pruemoji/first")
     }
 
