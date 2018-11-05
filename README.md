@@ -1,7 +1,7 @@
 # pruInfraatuomation
 
 Pre-Requisite
-1. Created Docker Hub credentials in Jenkins with Global accesss as "my-docker-hub-credentials"
+1. Docker Hub access and its credentials in Jenkins with Global accesss as "my-docker-hub-credentials"
 2. AWS EC2 AMI
 
 How to:
