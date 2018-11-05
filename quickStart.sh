@@ -22,4 +22,7 @@ systemctl start docker
 
 
 #Start Jenkins container
-sudo docker run -d -u root --name jenkins -p 8080:8080 -p 50000:50000 --volume=/var/run/docker.sock:/var/run/docker.sock -v /root/jenkins_2112:/var/jenkins_home -v $(which docker):/usr/bin/docker -v /root/jenkins_2112:/var/jenkins_home jenkins/jenkins
+sudo docker run -d -u root --name jenkins -p 8080:8080 -p 50000:50000 \
+	-v /var/run/docker.sock:/var/run/docker.sock \
+	-v /root/jenkins_2112:/var/jenkins_home \
+	-v $(which docker):/usr/bin/docker jenkins/jenkins
